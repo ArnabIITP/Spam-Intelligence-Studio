@@ -24,7 +24,7 @@ This project focuses on four practical goals:
 The project currently uses two public data sources:
 
 - `spam.csv`
-  - local SMS spam dataset already present in the repository
+  - local SMS spam dataset included in the repository
   - normalized into `text`, `label`, `channel`, `source`, `split`
   - labeled as `channel = sms`
 - Apache SpamAssassin public corpus
@@ -290,7 +290,7 @@ pytest
 
 ## Practical Notes
 
-- `spam.csv` is retained as the local SMS source dataset and is still required.
+- `spam.csv` provides the local SMS source dataset used by the pipeline.
 - The transformer benchmark may need network access the first time it downloads model files.
 - On restrictive Windows environments, notebook execution or temporary cache creation may require elevated permissions.
 - The classical benchmark is the most reliable path for quick local results.
