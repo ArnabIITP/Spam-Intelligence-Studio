@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "spam-intelligence"
+version = "0.1.0"
+description = "Multi-dataset spam filtering with classical NLP baselines and a transformer benchmark."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "accelerate>=0.26",
+    "joblib>=1.4",
+    "matplotlib>=3.9",
+    "pandas>=2.2",
+    "pytest>=8.3",
+    "scikit-learn>=1.6",
+    "seaborn>=0.13",
+    "torch>=2.7",
+    "transformers>=4.57",
+    "datasets>=4.3",
+]
+
+[project.scripts]
+spam-intelligence = "spam_intelligence.__main__:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

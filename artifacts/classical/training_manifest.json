@@ -1,0 +1,42 @@
+{
+  "corpus_path": "data\\processed\\message_corpus.csv",
+  "best_model": "logistic_regression",
+  "models": [
+    {
+      "model": "logistic_regression",
+      "accuracy": 0.9781553398058253,
+      "macro_f1": 0.9682653794803328,
+      "spam_precision": 0.9558011049723757,
+      "spam_recall": 0.9453551912568307,
+      "pr_auc": 0.9830249640344846,
+      "composite_score": 0.9688886266514753
+    },
+    {
+      "model": "random_forest",
+      "accuracy": 0.9769417475728155,
+      "macro_f1": 0.9658921821726958,
+      "spam_precision": 0.9767441860465116,
+      "spam_recall": 0.9180327868852459,
+      "pr_auc": 0.9855561093027674,
+      "composite_score": 0.9579901610306205
+    },
+    {
+      "model": "complement_nb",
+      "accuracy": 0.9508495145631068,
+      "macro_f1": 0.9282430216112745,
+      "spam_precision": 0.8991596638655462,
+      "spam_recall": 0.8770491803278688,
+      "pr_auc": 0.8917530354438379,
+      "composite_score": 0.8939046833867361
+    },
+    {
+      "model": "linear_svc",
+      "accuracy": 0.8331310679611651,
+      "macro_f1": 0.7337023424439802,
+      "spam_precision": 0.6654545454545454,
+      "spam_recall": 0.5,
+      "pr_auc": 0.668452327989904,
+      "composite_score": 0.6225440160842528
+    }
+  ]
+}

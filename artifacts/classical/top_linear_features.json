@@ -1,0 +1,166 @@
+{
+  "positive": [
+    {
+      "feature": "numeric__digit_ratio",
+      "weight": 5.458986402147928
+    },
+    {
+      "feature": "word_tfidf__txt",
+      "weight": 2.7791329749591838
+    },
+    {
+      "feature": "word_tfidf__our",
+      "weight": 2.1318298801737874
+    },
+    {
+      "feature": "numeric__uppercase_ratio",
+      "weight": 1.787352720493674
+    },
+    {
+      "feature": "word_tfidf__click here",
+      "weight": 1.77093187210909
+    },
+    {
+      "feature": "word_tfidf__150p",
+      "weight": 1.7075108913738877
+    },
+    {
+      "feature": "word_tfidf__your",
+      "weight": 1.7060498786187894
+    },
+    {
+      "feature": "char_tfidf__ 08",
+      "weight": 1.6942549341192457
+    },
+    {
+      "feature": "word_tfidf__free",
+      "weight": 1.674418979218288
+    },
+    {
+      "feature": "word_tfidf__call",
+      "weight": 1.6368142159917525
+    },
+    {
+      "feature": "word_tfidf__text",
+      "weight": 1.6242333409248755
+    },
+    {
+      "feature": "char_tfidf__xt ",
+      "weight": 1.5067484034658822
+    },
+    {
+      "feature": "word_tfidf__to",
+      "weight": 1.5063018382643536
+    },
+    {
+      "feature": "char_tfidf__mob",
+      "weight": 1.4493954860143892
+    },
+    {
+      "feature": "char_tfidf__ur ",
+      "weight": 1.4164943477329948
+    },
+    {
+      "feature": "word_tfidf__uk",
+      "weight": 1.3792994109109515
+    },
+    {
+      "feature": "word_tfidf__you have",
+      "weight": 1.3646629449702363
+    },
+    {
+      "feature": "char_tfidf__\ufffd\ufffd\ufffd",
+      "weight": 1.3417088671441924
+    },
+    {
+      "feature": "char_tfidf__ cl",
+      "weight": 1.3336872628775789
+    },
+    {
+      "feature": "word_tfidf__reply",
+      "weight": 1.3043399309258932
+    }
+  ],
+  "negative": [
+    {
+      "feature": "numeric__punctuation_ratio",
+      "weight": -3.3135152243662467
+    },
+    {
+      "feature": "char_tfidf__ i ",
+      "weight": -2.1589843350771862
+    },
+    {
+      "feature": "word_tfidf__2002",
+      "weight": -1.6328412592300603
+    },
+    {
+      "feature": "char_tfidf__ > ",
+      "weight": -1.5872433952194076
+    },
+    {
+      "feature": "word_tfidf__url http",
+      "weight": -1.4044813629079724
+    },
+    {
+      "feature": "word_tfidf__url",
+      "weight": -1.3227533947442514
+    },
+    {
+      "feature": "char_tfidf__.. ",
+      "weight": -1.2510913962954606
+    },
+    {
+      "feature": "word_tfidf__but",
+      "weight": -1.2451977410260684
+    },
+    {
+      "feature": "word_tfidf__its",
+      "weight": -1.1656562571101412
+    },
+    {
+      "feature": "word_tfidf__date",
+      "weight": -1.1288581631180876
+    },
+    {
+      "feature": "word_tfidf__ok",
+      "weight": -1.064284784671315
+    },
+    {
+      "feature": "word_tfidf__www newsisfree",
+      "weight": -0.9736696863711048
+    },
+    {
+      "feature": "word_tfidf__newsisfree com",
+      "weight": -0.9736696863711048
+    },
+    {
+      "feature": "word_tfidf__newsisfree",
+      "weight": -0.9736696863711048
+    },
+    {
+      "feature": "word_tfidf__re",
+      "weight": -0.9566881103356061
+    },
+    {
+      "feature": "word_tfidf__are you",
+      "weight": -0.91372415627522
+    },
+    {
+      "feature": "char_tfidf__ i'",
+      "weight": -0.9015196297311283
+    },
+    {
+      "feature": "word_tfidf__my",
+      "weight": -0.8900108435241989
+    },
+    {
+      "feature": "char_tfidf__2002",
+      "weight": -0.8777571240782108
+    },
+    {
+      "feature": "word_tfidf__what",
+      "weight": -0.8730399250635055
+    }
+  ]
+}

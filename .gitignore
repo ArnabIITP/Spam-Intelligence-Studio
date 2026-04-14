@@ -1,0 +1,8 @@
+.pytest_cache/
+.pytest_tmp/
+.benchmarks/
+__pycache__/
+*.py[cod]
+
+artifacts/test_smoke*/
+pytest-cache-files-*/
