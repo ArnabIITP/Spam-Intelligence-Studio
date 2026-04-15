@@ -1,6 +1,14 @@
 # Spam Intelligence Studio
 
-Spam Intelligence Studio is a multi-dataset spam-filtering project for classifying suspicious messages across different channels. Instead of treating spam detection as a single CSV exercise, this repository builds a unified workflow that merges SMS spam and email spam into one normalized corpus, benchmarks multiple classical NLP models, includes a transformer comparison, and exposes a small inference interface for real message classification.
+[![Python](https://img.shields.io/badge/Python-3.10%2B-blue)](#quick-start)
+[![License](https://img.shields.io/badge/License-MIT-green)](#license)
+[![Task](https://img.shields.io/badge/Task-Spam%20Detection-orange)](#what-this-project-does)
+[![Channels](https://img.shields.io/badge/Channels-SMS%20%2B%20Email-informational)](#datasets)
+
+Spam Intelligence Studio is a multi-dataset spam-filtering project for classifying suspicious messages across channels. Instead of treating spam detection as a single CSV exercise, this repository builds a unified workflow that merges SMS spam and email spam into one normalized corpus, benchmarks multiple classical NLP models, includes a transformer comparison, and exposes a small inference interface for real message classification.
+
+
+## What This Project Does
 
 The repository is designed to read like a complete machine learning project:
 
@@ -10,14 +18,98 @@ The repository is designed to read like a complete machine learning project:
 - saved artifacts for analysis and reporting
 - a final notebook that consumes package outputs instead of reimplementing the pipeline
 
-## Project Goals
-
-This project focuses on four practical goals:
+### Project Goals
 
 1. Create a realistic and well-structured spam-filtering pipeline for multi-channel message classification.
 2. Combine multiple public sources so the problem is broader than SMS-only classification.
 3. Compare strong classical baselines with a transformer benchmark.
 4. Keep the project easy to run on a CPU-first environment while still feeling advanced and production-aware.
+
+## Quick Start
+
+The file `messageSpamFiltering.py` acts as a thin launcher for the package CLI.
+
+```bash
+pip install -e .
+python messageSpamFiltering.py build-corpus
+python messageSpamFiltering.py train-classical
+python messageSpamFiltering.py train-transformer --epochs 1 --max-train-samples 2000 --max-eval-samples 800
+python messageSpamFiltering.py predict --message "Free reward waiting for you" --message "Let's meet at 6"
+```
+
+<details>
+<summary>See full command workflow</summary>
+
+### 1. Install
+
+```bash
+pip install -e .
+```
+
+### 2. Build the merged corpus
+
+```bash
+python messageSpamFiltering.py build-corpus
+```
+
+This step:
+
+- loads the SMS dataset
+- loads the SpamAssassin email corpus
+- cleans and normalizes records
+- removes duplicates
+- creates `train`, `validation`, and `test` splits
+- writes `data/processed/message_corpus.csv`
+
+### 3. Train and evaluate the classical benchmark
+
+```bash
+python messageSpamFiltering.py train-classical
+```
+
+This step writes:
+
+- trained model files
+- validation metrics
+- test metrics
+- confusion matrix
+- precision-recall curve
+- false positive examples
+- false negative examples
+- top linear feature weights
+- training manifest
+
+### 4. Run the transformer benchmark
+
+```bash
+python messageSpamFiltering.py train-transformer --epochs 1 --max-train-samples 2000 --max-eval-samples 800
+```
+
+For faster smoke runs, use smaller values such as:
+
+```bash
+python messageSpamFiltering.py train-transformer --epochs 0.2 --max-train-samples 400 --max-eval-samples 200
+```
+
+### 5. Inspect the dataset audit
+
+```bash
+python messageSpamFiltering.py audit
+```
+
+### 6. Predict on new messages
+
+```bash
+python messageSpamFiltering.py predict --message "Free reward waiting for you" --message "Let's meet at 6"
+```
+
+The prediction output includes:
+
+- predicted label
+- confidence score
+- short heuristic explanation signals
+
+</details>
 
 ## Datasets
 
@@ -136,7 +228,8 @@ Because that run was intentionally short, it should be treated as a benchmark sc
 `-- spam.csv
 ```
 
-### Important Directories
+<details>
+<summary>Important directories and what they contain</summary>
 
 - `src/spam_intelligence/`
   - package code for loading data, building features, training models, evaluation, prediction, and transformer benchmarking
@@ -155,78 +248,7 @@ Because that run was intentionally short, it should be treated as a benchmark sc
 - `tests/`
   - validation and smoke-test coverage for the workflow
 
-## Command Line Workflow
-
-The file `messageSpamFiltering.py` acts as a thin launcher for the package CLI.
-
-### 1. Install
-
-```bash
-pip install -e .
-```
-
-### 2. Build the merged corpus
-
-```bash
-python messageSpamFiltering.py build-corpus
-```
-
-This step:
-
-- loads the SMS dataset
-- loads the SpamAssassin email corpus
-- cleans and normalizes records
-- removes duplicates
-- creates `train`, `validation`, and `test` splits
-- writes `data/processed/message_corpus.csv`
-
-### 3. Train and evaluate the classical benchmark
-
-```bash
-python messageSpamFiltering.py train-classical
-```
-
-This step writes:
-
-- trained model files
-- validation metrics
-- test metrics
-- confusion matrix
-- precision-recall curve
-- false positive examples
-- false negative examples
-- top linear feature weights
-- training manifest
-
-### 4. Run the transformer benchmark
-
-```bash
-python messageSpamFiltering.py train-transformer --epochs 1 --max-train-samples 2000 --max-eval-samples 800
-```
-
-For faster smoke runs, use smaller values such as:
-
-```bash
-python messageSpamFiltering.py train-transformer --epochs 0.2 --max-train-samples 400 --max-eval-samples 200
-```
-
-### 5. Inspect the dataset audit
-
-```bash
-python messageSpamFiltering.py audit
-```
-
-### 6. Predict on new messages
-
-```bash
-python messageSpamFiltering.py predict --message "Free reward waiting for you" --message "Let's meet at 6"
-```
-
-The prediction output includes:
-
-- predicted label
-- confidence score
-- short heuristic explanation signals
+</details>
 
 ## Generated Artifacts
 
