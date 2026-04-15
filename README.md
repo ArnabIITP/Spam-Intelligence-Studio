@@ -313,6 +313,7 @@ pytest
 ## Practical Notes
 
 - `spam.csv` provides the local SMS source dataset used by the pipeline.
+- GitHub may show `Roff` as the largest language because the repository contains large raw email corpus files; this reflects dataset byte volume, not the primary implementation language of the project.
 - The transformer benchmark may need network access the first time it downloads model files.
 - On restrictive Windows environments, notebook execution or temporary cache creation may require elevated permissions.
 - The classical benchmark is the most reliable path for quick local results.
